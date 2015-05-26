@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
+
+using System.Web.Http.SelfHost.Channels;
 
 namespace WindowsFormsApplication1
 {
@@ -13,6 +10,8 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            var registeredChannels = ChannelServices.RegisteredChannels;
+            Text = registeredChannels.ToString();
         }
     }
 }
